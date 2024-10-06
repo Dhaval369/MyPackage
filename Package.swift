@@ -15,9 +15,9 @@ let package = Package(
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
-        .binaryTarget(name: "SCSDKCameraKit", path: "./MyPackage/Frameworks/SCSDKCameraKit.xcframework"),
-        .binaryTarget(name: "SCSDKCoreKit", path: "./MyPackage/Frameworks/SCSDKCoreKit.xcframework"),
-        .binaryTarget(name: "SCSDKCreativeKit", path: "./MyPackage/Frameworks/SCSDKCreativeKit.xcframework"),
+        .binaryTarget(name: "SCSDKCameraKit", path: "./MyLibrary/Frameworks/SCSDKCameraKit.xcframework"),
+        .binaryTarget(name: "SCSDKCoreKit", path: "./MyLibrary/Frameworks/SCSDKCoreKit.xcframework"),
+        .binaryTarget(name: "SCSDKCreativeKit", path: "./MyLibrary/Frameworks/SCSDKCreativeKit.xcframework"),
         .target(name: "MyLibrary", dependencies: ["SCSDKCameraKit", "SCSDKCoreKit", "SCSDKCreativeKit"], path: "./Sources")
     ]
 )
