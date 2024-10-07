@@ -27,8 +27,8 @@ let package = Package(
     ],
     targets: [
         //.binaryTarget(name: creativeKit, url: creativeKitURL, checksum: creativeKitCheckSum),
-        .binaryTarget(name: coreKit, url: coreKitURL, checksum: coreKitCheckSum),
-        //.binaryTarget(name: cameraKit, url: remoteUrl, checksum: remoteChecksum),
-        .target(name: packageName, dependencies: [coreKit], path: "./MyLibrary/Sources")
+        //.binaryTarget(name: coreKit, url: coreKitURL, checksum: coreKitCheckSum),
+        .binaryTarget(name: cameraKit, url: remoteUrl, checksum: remoteChecksum),
+        .target(name: packageName, dependencies: [cameraKit], path: "./MyLibrary/Sources")
     ]
 )
