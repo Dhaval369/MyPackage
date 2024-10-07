@@ -1,5 +1,4 @@
 // swift-tools-version: 5.10
-// The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
@@ -22,20 +21,14 @@ let package = Package(
     name: "MyLibrary",
     defaultLocalization: "en", platforms: [.iOS(.v13)],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: packageName,
             targets: [packageName]),
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
-        //.binaryTarget(name: "SCSDKCameraKit", path: "./MyLibrary/Frameworks/SCSDKCameraKit.xcframework"),
-        //.binaryTarget(name: "SCSDKCoreKit", path: "./MyLibrary/Frameworks/SCSDKCoreKit.xcframework"),
-        //.binaryTarget(name: "SCSDKCreativeKit", path: "./MyLibrary/Frameworks/SCSDKCreativeKit.xcframework"),
         .binaryTarget(name: creativeKit, url: creativeKitURL, checksum: creativeKitCheckSum),
         .binaryTarget(name: coreKit, url: coreKitURL, checksum: coreKitCheckSum),
         .binaryTarget(name: cameraKit, url: remoteUrl, checksum: remoteChecksum),
-        .target(name: packageName, dependencies: [cameraKit, coreKit, creativeKit], path: "./MyLibrary/Sources")
+        .target(name: packageName, dependencies: [creativeKit, coreKit, cameraKit], path: "./MyLibrary/Sources")
     ]
 )
