@@ -26,9 +26,9 @@ let package = Package(
             targets: [packageName]),
     ],
     targets: [
-        //.binaryTarget(name: creativeKit, url: creativeKitURL, checksum: creativeKitCheckSum),
-        //.binaryTarget(name: coreKit, url: coreKitURL, checksum: coreKitCheckSum),
+        .binaryTarget(name: creativeKit, url: creativeKitURL, checksum: creativeKitCheckSum),
+        .binaryTarget(name: coreKit, url: coreKitURL, checksum: coreKitCheckSum),
         .binaryTarget(name: cameraKit, url: remoteUrl, checksum: remoteChecksum),
-        .target(name: packageName, dependencies: ["SCSDKCreativeKit"], path: "./MyLibrary/Sources")
+        .target(name: packageName, dependencies: ["SCSDKCreativeKit", "SCSDKCoreKit", "SCSDKCameraKit"], path: "./MyLibrary/Sources")
     ]
 )
