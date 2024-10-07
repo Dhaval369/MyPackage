@@ -23,6 +23,6 @@ let package = Package(
         //.binaryTarget(name: "SCSDKCoreKit", path: "./MyLibrary/Frameworks/SCSDKCoreKit.xcframework"),
         //.binaryTarget(name: "SCSDKCreativeKit", path: "./MyLibrary/Frameworks/SCSDKCreativeKit.xcframework"),
         .binaryTarget(name: "SCSDKCameraKit", url: remoteUrl, checksum: remoteChecksum),
-        .target(name: packageName, dependencies: ["SCSDKCameraKit"], path: "./Sources")
+        .target(name: packageName, dependencies: ["SCSDKCameraKit"])
     ]
 )
